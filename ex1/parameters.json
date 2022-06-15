@@ -1,0 +1,22 @@
+[
+  {
+    "ParameterKey": "DBUsername",
+    "ParameterValue": "admin"
+  },
+  {
+    "ParameterKey": "MasterPassword",
+    "ParameterValue": "sodja1234"
+  },
+  {
+    "ParameterKey": "DBAllocatedStorage",
+    "ParameterValue": "10"
+  },
+  {
+    "ParameterKey": "DBInstanceClass",
+    "ParameterValue": "db.m5.large"
+  },
+  {
+    "ParameterKey": "DBName",
+    "ParameterValue": "testDB4SG"
+  }
+]

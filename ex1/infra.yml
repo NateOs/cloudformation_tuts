@@ -1,0 +1,41 @@
+Description: >
+  RDS mySQL DB with mySQLDBGroup security group
+
+Parameters:
+
+  # SecurityGroup:
+  #   Description: Security Group to assign to DB
+  #   Type: String
+
+  MasterPassword:
+    Description: Master Password that might be changed after creation
+    Type: String
+
+  DBUsername:
+    Description: Username for initial db user
+    Type: String
+
+  DBAllocatedStorage:
+    Description: The amount of storage in gibibytes (GiB) to be initially allocated for the database instance.
+    Type: String
+
+  DBInstanceClass:
+    Type: String
+
+  DBName:
+    Type: String
+
+Resources:
+
+  MyDB:
+    Type: "AWS::RDS::DBInstance"
+    Properties:
+      DBName: !Ref DBName
+      DBInstanceClass: !Ref DBInstanceClass
+      AllocatedStorage: !Ref DBAllocatedStorage
+      Engine: MySQL
+      EngineVersion: "8.0.16"
+      MasterUsername: !Ref DBUsername
+      MasterUserPassword: !Ref MasterPassword
+      DeletionPolicy: Retain
+      # VPCSecurityGroups: SecurityGroup
